@@ -39,3 +39,6 @@ print('Encoded sentence:')
 print(sentence_encoded['input_ids'][0])
 print('\nDecoded sentence:')
 print(sentence_decoded)
+
+for i, index in enumerate(example_indices):
+    dialogue = dataset['test']
