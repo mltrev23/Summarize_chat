@@ -1,0 +1,22 @@
+from datasets import load_dataset
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, GenerationConfig
+
+hugginface_dataset_name = 'knkarthick/dialogsum'
+
+dataset = load_dataset(hugginface_dataset_name)
+
+example_indices = [40, 200]
+
+dash_line = '-'.join('' for x in range(100))
+
+for i, index in enumerate(example_indices):
+    print(dash_line)
+    print(f'Example {i + 1}')
+    print(dash_line)
+    print('Input dialog: ')
+    print(dataset['test'][index]['dialogue'])
+    print(dash_line)
+    print('Baseline human summary: ')
+    print(dataset['test'][index]['summary'])
+    print(dash_line)
+    print()
